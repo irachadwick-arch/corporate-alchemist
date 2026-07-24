@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Corporate Alchemist · Tabby edition</title>
+<title>Tabby Alchemist</title>
 <style>
   :root{
     --bg:#0c1512; --panel:#10201b; --card:#152720;
@@ -83,7 +83,7 @@
 </head>
 <body>
 <header>
-  <div class="brand"><span class="logo">tabby</span><h1>Corporate Alchemist</h1></div>
+  <div class="brand"><span class="logo">tabby</span><h1>Alchemist</h1></div>
   <span class="sub">office life, one combo at a time &middot; ship 🏆 Product of the Year</span>
   <div class="spacer"></div>
   <span class="stat">Discovered: <b id="count">0</b> / <span id="total">0</span></span>
@@ -99,7 +99,7 @@
       <div class="slot" id="slot1"><span class="e">＋</span><span class="n">pick an element</span></div>
     </div>
     <div class="result" id="result"></div>
-    <div class="hint">Click two elements to combine them. Green-bordered ones are Tabby products.<br>Start with: ☕ Coffee &middot; 🧑‍💼 Employee &middot; 🛍️ Shopper &middot; 🏪 Merchant</div>
+    <div class="hint">Click two elements to combine them.<br>Start with: ☕ Coffee &middot; 🧑‍💼 Employee &middot; 🛍️ Shopper &middot; 🏪 Merchant</div>
   </section>
 
   <aside class="side">
@@ -109,7 +109,7 @@
   </aside>
 </main>
 
-<footer>Corporate Alchemist &middot; Tabby edition &mdash; mostly office life, with Tabby's real products mixed in.</footer>
+<footer>Tabby Alchemist &mdash; mostly office life, with Tabby's real products mixed in.</footer>
 
 <div class="win" id="win">
   <div class="box">
@@ -279,10 +279,12 @@ function renderSlots(){
   });
 }
 function pick(id){
+  justNew.delete(id);            // using an element clears its NEW badge
   if(slots[0]===null) slots[0]=id;
   else if(slots[1]===null){ slots[1]=id; combine(); }
   else { slots=[id,null]; resultBox.innerHTML=""; }
   renderSlots();
+  renderGrid();
 }
 document.getElementById("slot0").onclick=()=>{slots[0]=null;renderSlots();};
 document.getElementById("slot1").onclick=()=>{slots[1]=null;renderSlots();};
