@@ -181,7 +181,7 @@ function setTab(tab) {
   tabRecipes.classList.toggle("active", !onElements);
   grid.hidden = !onElements;
   book.hidden = onElements;
-  legend.hidden = !onElements;
+  if (legend) legend.hidden = !onElements;
   search.placeholder = onElements ? "search elements…" : "search recipes…";
   renderGrid(); renderBook();
 }
