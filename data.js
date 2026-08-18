@@ -118,11 +118,9 @@ const ELEMENTS = {
   audit:{n:"Audit",e:"📎",f:"Compliance, reviewed end to end."},
   security:{n:"Security",e:"🔒",f:"Least privilege, most tickets."},
   licence:{n:"Licence",e:"📃",f:"Permission to operate."},
-  allNighter:{n:"All-Nighter",e:"🌃",f:"Coffee versus the deadline."},
   freeLunch:{n:"Free Lunch",e:"🍕",f:"Catered Friday. Gone in ten minutes."},
   blocker:{n:"Blocker",e:"🚧",f:"A bug stops the sprint."},
   escalation:{n:"Escalation",e:"☎️",f:"Blocked long enough — loop in the VP."},
-  northStar:{n:"North-Star Metric",e:"🌟",f:"The one number that matters."},
 
   productOfYear:{n:"Product of the Year",e:"🏆",final:true,f:"Endless standups, somehow, into something people love."},
 };
@@ -228,11 +226,9 @@ const RAW = [
   ["compliance","retro","audit"],
   ["compliance","code","security"],
   ["compliance","launch","licence"],
-  ["deadline","coffee","allNighter"],
   ["office","friday","freeLunch"],
   ["sprint","bug","blocker"],
   ["blocker","manager","escalation"],
-  ["okr","kpi","northStar"],
 
   // ---- Finale ----
   ["launch","superApp","productOfYear"],
