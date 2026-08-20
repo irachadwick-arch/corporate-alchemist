@@ -8,8 +8,8 @@ const BASES = Object.keys(ELEMENTS).filter(id => ELEMENTS[id].base);
 const TOTAL_RECIPES = RAW.length;
 const SAVE_KEY = "tabbyAlchemist.v1";
 const HINT_COOLDOWN_MS = 30000;
-const CLEAR_MS = 1500;
-const FAIL_CLEAR_MS = 900;
+const CLEAR_MS = 2600;
+const FAIL_CLEAR_MS = 1300;
 
 /* ---------------------------------------------------------------- state */
 
