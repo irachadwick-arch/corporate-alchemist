@@ -8,7 +8,7 @@ const BASES = Object.keys(ELEMENTS).filter(id => ELEMENTS[id].base);
 const TOTAL_RECIPES = RAW.length;
 const SAVE_KEY = "tabbyAlchemist.v1";
 const HINT_COOLDOWN_MS = 30000;
-const CLEAR_MS = 800;
+const CLEAR_MS = 1500;
 const FAIL_CLEAR_MS = 900;
 
 /* ---------------------------------------------------------------- state */
@@ -192,7 +192,11 @@ tabRecipes.onclick = () => setTab("recipes");
 
 function scheduleClear(ms) {
   clearTimeout(clearTimer);
-  clearTimer = setTimeout(() => { slots = [null, null]; renderSlots(); }, ms);
+  clearTimer = setTimeout(() => {
+    slots = [null, null];
+    resultBox.innerHTML = "";   // also clear the result card so it doesn't linger
+    renderSlots();
+  }, ms);
 }
 
 /* Combining is driven by "both slots are full", not by which branch filled the
