@@ -64,9 +64,8 @@ function load() {
   }
   BASES.forEach(id => discovered.add(id));
 
-  if (Array.isArray(s.justNew)) {
-    s.justNew.filter(id => ELEMENTS[id] && discovered.has(id)).forEach(id => justNew.add(id));
-  }
+  // NEW is a transient highlight — never restored from a save, so badges
+  // don't pile up across sessions.
   if (Array.isArray(s.foundRecipes)) {
     foundRecipes = s.foundRecipes.filter(k => typeof k === "string" && RECIPES[k]);
     foundSet = new Set(foundRecipes);
@@ -239,6 +238,7 @@ function combine() {
   const isNew = !discovered.has(res);
   discovered.add(res);
   if (isNew) {
+    justNew.clear();      // only the latest discovery carries the NEW badge
     justNew.add(res);
     if (startedAt === null) startedAt = Date.now();
   }
